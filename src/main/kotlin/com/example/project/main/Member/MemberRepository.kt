@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository
 
 interface MemberRepository:CrudRepository<Member, Member> {
 
-    @Query("select * from member")
+    @Query("select id,passwords from member")
     fun findMember(): List<Member>
 }
 

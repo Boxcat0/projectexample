@@ -4,16 +4,16 @@
 <body>
 <div class = "content">
   <div>
-    <th><h1>리뷰 조회</h1></th>
+    <th><h1>회원 조회</h1></th>
     <table border="1">
       <tr>
-        <th>Review</th>
         <th>ID</th>
+        <th>PASSWORDS</th>
       </tr>
       <tbody>
       <tr th:each = "re:${re}">
-        <td th:text ="${re.reviews}">
         <td th:text ="${re.id}">
+        <td th:text ="${re.passwords}">
       </tr>
       </tbody>
     </table>

@@ -17,7 +17,6 @@ class ReviewController(val service: ReviewService) {
         model.addAttribute("re", service.findReviews())
         return "reviewer"
     }
-
     @PostMapping("/allreview")
     fun  reviewpost(@RequestBody review: Review)
     {
