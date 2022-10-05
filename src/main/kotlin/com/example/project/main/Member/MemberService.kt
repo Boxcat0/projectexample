@@ -1,4 +1,4 @@
-package com.example.project.main
+package com.example.project.main.Member
 
 import org.springframework.stereotype.Service
 
@@ -10,11 +10,5 @@ class MemberService(val db: MemberRepository) {
     fun post(member: Member)
     {
         db.save(member)
-    }
-
-    fun findReviews(): List<Member> = db.findReviews()
-    fun reviewpost(review: Member)
-    {
-        db.save(review)
     }
 }

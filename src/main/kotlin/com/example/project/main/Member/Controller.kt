@@ -1,4 +1,4 @@
-package com.example.project.main
+package com.example.project.main.Member
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table
@@ -17,15 +17,7 @@ class Controller(val service: MemberService) {
     fun post(@RequestBody member: Member){
         service.post(member)
     }
-
-    @GetMapping("/allreview")
-    fun re(): List<Member> = service.findReviews()
-
-    @PostMapping("/allreview")
-    fun  reviewpost(@RequestBody review: Member){
-        service.reviewpost(review)
-    }
 }
 
 @Table("member")
-data class Member(@Id val id: String?, val passwords: String, val reviews: String?)
+data class Member(@Id val id: String?, val passwords: String?, val reviews: String?)
