@@ -2,13 +2,13 @@
 <html lang = "en" xmlns:th="http://www.thymeleaf.org">
 
 <body>
-<div class = "content">
+<div class = "container">
   <div>
     <table>
-        <tr>
-          <th>Review</th>
-          <th>: ID</th>
-        </tr>
+      <tr>
+        <th>Review</th>
+        <th>: ID</th>
+      </tr>
       <tbody>
       <tr th:each = "re: ${re}">
         <td th:text = "${re.reviews}"><td>
