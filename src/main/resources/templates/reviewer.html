@@ -4,13 +4,13 @@
 <body>
 <div class = "content">
   <div>
-    <table>
+    <table border="1">
         <tr>
           <th>Review</th>
-          <th>: ID</th>
+          <th>ID</th>
         </tr>
       <tbody>
-      <tr th:each = "re: ${re}">
+      <tr th:each = "re:${re}">
         <td th:text = "${re.reviews}"><td>
         <td th:text = "${re.id}"><td>
       </tbody>
