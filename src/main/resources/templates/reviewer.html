@@ -8,11 +8,13 @@
     <table border="1">
       <tr>
         <th>Review</th>
+        <th>별점</th>
         <th>ID</th>
       </tr>
       <tbody>
       <tr th:each = "re:${re}">
-        <td th:text ="${re.reviews}">
+        <td th:text ="${re.review}">
+        <td th:text ="${re.star}">
         <td th:text ="${re.id}">
       </tr>
       </tbody>

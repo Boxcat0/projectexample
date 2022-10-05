@@ -24,5 +24,5 @@ class ReviewController(val service: ReviewService) {
     }
 }
 
-@Table("member")
-data class Review(@Id val reviews:String?, val id : String?)
+@Table("reviewtable")
+data class Review(@Id val review:String?, val star: Double?, val id : String?)
