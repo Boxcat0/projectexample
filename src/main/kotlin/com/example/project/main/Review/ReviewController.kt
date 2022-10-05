@@ -1,5 +1,6 @@
 package com.example.project.main.Review
 
+import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
@@ -18,4 +19,4 @@ class ReviewController(val service: ReviewService) {
 }
 
 @Table("member")
-data class Review(val reviews:String?)
+data class Review(@Id val reviews:String?, val id : String?)
