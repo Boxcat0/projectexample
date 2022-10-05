@@ -2,15 +2,15 @@ package com.example.project.main.Member
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table
-import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 
 @RestController
 class Controller(val service: MemberService) {
-    @GetMapping("/allusers")
+    @RequestMapping("/allusers")
     fun index(): List<Member> = service.findMember()
 
     @PostMapping("/allusers")
