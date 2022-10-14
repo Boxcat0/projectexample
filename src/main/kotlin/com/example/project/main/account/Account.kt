@@ -1,9 +1,6 @@
 package com.example.project.main.account
 
-import javax.persistence.FetchType
 import org.hibernate.annotations.CreationTimestamp
-import org.springframework.boot.autoconfigure.security.SecurityProperties
-import org.springframework.data.annotation.Id
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.User
 import java.time.LocalDateTime
@@ -12,13 +9,14 @@ import javax.persistence.*
 
 @Entity
 data class Account(
-        @Id @GeneratedValue
-        var id: String? =null,
+        @EmbeddedId
+        @GeneratedValue
+        var id: String? = "",
         var password: String,
 
         @Enumerated(EnumType.STRING)
         @ElementCollection(fetch = FetchType.EAGER)
-        var roles: Set<AccountRole>,
+        var roles: MutableSet<AccountRole>,
 
         @CreationTimestamp
         var createDt: LocalDateTime = LocalDateTime.now()
@@ -26,6 +24,7 @@ data class Account(
 {
         fun getAuthorities(): User {
                 return User(
+                        this.id,
                         this.password,
                         this.roles.stream().map{ role -> SimpleGrantedAuthority("ROLE_$role") }
                                 .collect(Collectors.toSet())
