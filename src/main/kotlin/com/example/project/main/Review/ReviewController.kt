@@ -1,7 +1,5 @@
 package com.example.project.main.Review
 
-import org.springframework.data.annotation.Id
-import org.springframework.data.relational.core.mapping.Table
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -23,6 +21,3 @@ class ReviewController(val service: ReviewService) {
         service.reviewpost(review)
     }
 }
-
-@Table("reviewtable")
-data class Review(@Id val review:String?, val star: Double?, val id : String?)
